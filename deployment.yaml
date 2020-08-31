@@ -1,0 +1,20 @@
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: enigma-deployment
+ spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: enigma
+   template:
+     metadata:
+       labels:
+         app: enigma
+     spec:
+       containers:
+       - name: enigma
+         image: us.icr.io/tmsl/tmsl-repo1
+         
+         ports:
+         - containerPort: 8501
